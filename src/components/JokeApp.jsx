@@ -4,7 +4,7 @@ class JokeApp extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            joke: 'THIS will be a joke',
+            joke: 'Want a hilarious, dev-related Chuck Norris joke? Just click the button!',
             isLoading: false,
         }
     }
@@ -18,7 +18,8 @@ class JokeApp extends Component {
             .then(response => response.json())
             .then(jokeJson => {
                 this.setState({
-                    joke: jokeJson.value
+                    joke: jokeJson.value,
+                    isLoading: false,
                 }, () => {
                     console.log('New joke stored');
                 });
